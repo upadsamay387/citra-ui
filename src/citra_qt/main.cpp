@@ -2304,9 +2304,9 @@ void GMainWindow::OnCoreError(Core::System::ResultStatus result, std::string det
     message_box.setWindowTitle(title);
     message_box.setText(message);
     message_box.setIcon(error_severity_icon);
-    if(error_severity_icon == QMessageBox::Icon::Critical) {
+    if (error_severity_icon == QMessageBox::Icon::Critical) {
         message_box.addButton(tr("Continue"), QMessageBox::RejectRole);
-        QPushButton *abort_button = message_box.addButton(tr("Quit Game"), QMessageBox::AcceptRole);
+        QPushButton* abort_button = message_box.addButton(tr("Quit Game"), QMessageBox::AcceptRole);
         if (result != Core::System::ResultStatus::ShutdownRequested)
             message_box.exec();
 
@@ -2318,8 +2318,8 @@ void GMainWindow::OnCoreError(Core::System::ResultStatus result, std::string det
             }
         }
     } else {
-        //This block should run when the error isn't too big of a deal
-        //e.g. when a save state can't be saved or loaded
+        // This block should run when the error isn't too big of a deal
+        // e.g. when a save state can't be saved or loaded
         message_box.addButton(tr("OK"), QMessageBox::RejectRole);
         message_box.exec();
     }

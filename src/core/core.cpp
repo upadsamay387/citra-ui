@@ -125,7 +125,7 @@ System::ResultStatus System::RunLoop(bool tight_loop) {
         frame_limiter.WaitOnce();
         return ResultStatus::Success;
     }
-case Signal::Save: {
+    case Signal::Save: {
         LOG_INFO(Core, "Begin save");
         try {
             System::SaveState(param);
